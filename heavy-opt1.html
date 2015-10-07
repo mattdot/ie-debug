@@ -45,11 +45,13 @@ src="http://www.youtube.com/embed/bwlmDxJIFAc?autoplay=1">
 <script>
 'use strict';
 
-window.addEventListener('beforeunload', function() {
-    var bodyElem = document.getElementsByTagName('body')[0];
-    // remove body
-    bodyElem.parentNode.removeChild(bodyElem);
-});
+if (!(window.ActiveXObject) && "ActiveXObject" in window) {
+    window.addEventListener('beforeunload', function() {
+        var bodyElem = document.getElementsByTagName('body')[0];
+        // remove body
+        bodyElem.parentNode.removeChild(bodyElem);
+    });
+}
 </script>
 
 </body>
