@@ -46,9 +46,10 @@ src="http://www.youtube.com/embed/bwlmDxJIFAc?autoplay=1">
 'use strict';
 
 window.addEventListener('onbeforeunload', function() {
-    var bodyElem = document.getElementsByTagName('body')[0];
-    // remove body
-    bodyElem.parentNode.removeChild(bodyElem);
+    var iframeElemements = document.getElementsByTagName('iframe');
+    for (var i = 0, l = iframeElemements.length; i < l; i++) {
+        iframeElemements[i].parentNode.removeChild(iframeElemements[i]);
+    }
 });
 </script>
 
