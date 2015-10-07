@@ -45,10 +45,10 @@ src="http://www.youtube.com/embed/bwlmDxJIFAc?autoplay=1">
 <script>
 'use strict';
 
-window.addEventListener('onbeforeunload', function() {
-    var iframeElemements = document.getElementsByTagName('iframe');
-    for (var i = 0, l = iframeElemements.length; i < l; i++) {
-        iframeElemements[i].parentNode.removeChild(iframeElemements[i]);
+window.addEventListener('beforeunload', function() {
+    var iframeElements = document.getElementsByTagName('iframe');
+    for (var i = 0, l = iframeElements.length; i < l; i++) {
+        iframeElements[i].parentNode.removeChild(iframeElements[i]);
     }
 });
 </script>
