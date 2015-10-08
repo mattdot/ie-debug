@@ -50,6 +50,7 @@ if (!(window.ActiveXObject) && "ActiveXObject" in window) {
     window.addEventListener('beforeunload', function() {
         var iframeElements = Array.prototype.slice.call(document.getElementsByTagName('iframe'));
         for (var i = 0, l = iframeElements.length; i < l; i++) {
+            iframe.src = 'about:blank';
             iframeElements[i].parentNode.removeChild(iframeElements[i]);
         }
     });
